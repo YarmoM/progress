@@ -80,7 +80,6 @@ function progress(input, varargin)
         % Unsupported argument type
         error('Unsupported argument type');
     end
-    
 end
 
 function str = generateString(percentage, s)
@@ -102,5 +101,4 @@ function output = defaultOption(opts, field, default)
     else
         output = default;
     end
-
 end
