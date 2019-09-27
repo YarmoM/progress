@@ -23,7 +23,7 @@ Simple command line progress bar for Matlab
 `progress(..., opts)` uses options from the struct opts. See below.
 
 ## Options
-`opts.percentageLength`: sets the number of characters reserved for the percentage display (default: 7)
+`opts.percentageLength`: sets the number of characters reserved for the percentage display (default: 5)
 `opts.barLength`: sets the number of characters reserved for the progress bar (default: 48)
 `opts.charEmpty`: sets the "empty" character (default: '.')
 `opts.charFilled`: sets the "filled" character (default: '#')

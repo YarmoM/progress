@@ -22,7 +22,7 @@ function progress(input, varargin)
 %
 %   Option settings:
 %       opts.percentageLength: sets the number of characters reserved for
-%           the percentage display (default: 7)
+%           the percentage display (default: 5)
 %       opts.barLength: sets the number of characters reserved for the
 %           progress bar (default: 48)
 %       opts.charEmpty: sets the "empty" character (default: '.')
@@ -38,7 +38,7 @@ function progress(input, varargin)
 
     % Handle options
     opts = struct;
-    opts.percentageLength = defaultOption(p.opts, 'percentageLength', 7);
+    opts.percentageLength = defaultOption(p.opts, 'percentageLength', 5);
     opts.barLength = defaultOption(p.opts, 'barLength', 48);
     opts.charEmpty = defaultOption(p.opts, 'charEmpty', '.');
     opts.charFilled = defaultOption(p.opts, 'charFilled', '#');
@@ -88,7 +88,7 @@ function str = generateString(percentage, s)
 
     percentage = floor(percentage);
     percentageOut = [num2str(percentage) '%%'];
-    percentageOut = [percentageOut repmat(' ',1,s.percentageLength-length(percentageOut)-1)];
+    percentageOut = [percentageOut repmat(' ',1,s.percentageLength-length(percentageOut)+1)];
     nDots = floor(percentage/100*s.barLength);
     dotOut = ['[' repmat('#',1,nDots) repmat('.',1,s.barLength-nDots) ']'];
     str = [percentageOut dotOut '\n'];
